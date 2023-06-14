@@ -5,16 +5,16 @@
  */
 
 public class Item {
-    private String itemType;
+    private String ItemName;
     private int goldCost;
     
-    public Item(String itemType, int goldCost) {
+    public Item(String ItemName, int goldCost) {
         this.itemType = itemType;
         this.goldCost = goldCost;
     }
     
-    public String getItemType() {
-        return itemType;
+    public String getItemName() {
+        return itemItemName;
     }
     
     public int getGoldCost() {
