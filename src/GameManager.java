@@ -99,14 +99,19 @@ public class GameManager {
 	}
 	
 	/**
-	 * Begins option to use items.
+	 * Allows selection and use of items from the
+	 * inventory.
+	 * 
+	 * side-effects
+	 * not rerentially transparent
 	 */
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
         
+		// Display inventory
         System.out.println("Inventory:");
         for (Item item : inventory) {
-            System.out.println(item.getitemName());
+            System.out.println(item.getitemType());
         }
         
         System.out.println("Choose an item from the inventory: ");
@@ -114,43 +119,51 @@ public class GameManager {
         
         Item itemToUse = null;
         for (Item item : inventory) {
-            if (item.getitemName().equals(chosenItem)) {
+            if (item.getitemType().equals(chosenItem)) {
                 itemToUse = item;
                 break;
             }
         }
         
         if (itemToUse != null) {
-            String itemName = itemToUse.getitemName();
-            
-            if (itemName.equals("Sword")) {
+            String itemType = itemToUse.getitemType();
+
+             // Use sword item
+            if (itemType.equals("Sword")) {
                 System.out.println("Can't use that here!");
-            } else if (itemName.equals("Potion")) {
+				// Use potion item
+            } else if (itemType.equals("Potion")) {
                 health += 20;
                 System.out.println("You take a swig of potion.");
-            } else if (itemName.equals("Bara Brith")) {
+				// Use Bara Brith item
+            } else if (itemType.equals("Bara Brith")) {
                 health += 50;
                 System.out.println("The taste of childhood rejuvenates you.");
-            } else if (itemName.equals("Textbook")) {
+				// Use Textbook item
+            } else if (itemType.equals("Textbook")) {
                 experience += 75;
                 System.out.println("Your newfound knowledge of Discrete Maths emboldens you.");
-            } else if (itemName.equals("Spear")) {
+				// Use Spear item
+            } else if (itemType.equals("Spear")) {
                 System.out.println("Can't use that here!");
-            } else if (itemName.equals("Phone")) {
+				// Use Phone item
+            } else if (itemType.equals("Phone")) {
+				// Use Phone item if enough gold.
                 if (gold > 10) {
                     gold -= 10;
                     experience += 100;
                     System.out.println("You call in some help.");
                 } else {
+					// Display lack of gold for phone message
                     System.out.println("You don't have enough gold to use the phone.");
                 }
             }
-            
-            if (itemName.equals("Sword") || itemName.equals("Spear")) {
+            // Equip weapon if it is a sword or spear
+            if (itemType.equals("Sword") || itemType.equals("Spear")) {
                 currentWeapon = itemToUse;
-                System.out.println("You equipped the " + itemName + ".");
+                System.out.println("You equipped the " + itemType + ".");
             }
-            
+             // Remove used item from the inventory
             inventory.remove(itemToUse);
         } else {
             System.out.println("Item not found in inventory.");
