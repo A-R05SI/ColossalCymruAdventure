@@ -3,6 +3,8 @@
  */
 
 import java.util.Scanner;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  * This class describes a GameManager, the class responsible for dictating the flow of gameplay.
@@ -101,12 +103,74 @@ public class GameManager {
 	}
 	
 	/**
-	 * Begins option to use items.
+	 * Allows selection and use of items from the
+	 * inventory.
+	 * 
+	 * side-effects
+	 * not rerentially transparent
 	 */
 	private static void beginUse() {
-		System.out.println("WARNING - Feature Unimplemented");
-		//TODO Handle using items if the player has them.
-	}
-	
+		Scanner scanner = new Scanner(System.in);
+        
+		// Display inventory
+        System.out.println("Inventory:");
+        for (Item item : inventory) {
+            System.out.println(item.getitemType());
+        }
+        
+        System.out.println("Choose an item from the inventory: ");
+        String chosenItem = scanner.nextLine();
+        
+        Item itemToUse = null;
+        for (Item item : inventory) {
+            if (item.getitemType().equals(chosenItem)) {
+                itemToUse = item;
+                break;
+            }
+        }
+        
+        if (itemToUse != null) {
+            String itemType = itemToUse.getitemType();
 
-}
+             // Use sword item
+            if (itemType.equals("Sword")) {
+                System.out.println("Can't use that here!");
+				// Use potion item
+            } else if (itemType.equals("Potion")) {
+                health += 20;
+                System.out.println("You take a swig of potion.");
+				// Use Bara Brith item
+            } else if (itemType.equals("Bara Brith")) {
+                health += 50;
+                System.out.println("The taste of childhood rejuvenates you.");
+				// Use Textbook item
+            } else if (itemType.equals("Textbook")) {
+                experience += 75;
+                System.out.println("Your newfound knowledge of Discrete Maths emboldens you.");
+				// Use Spear item
+            } else if (itemType.equals("Spear")) {
+                System.out.println("Can't use that here!");
+				// Use Phone item
+            } else if (itemType.equals("Phone")) {
+				// Use Phone item if enough gold.
+                if (gold > 10) {
+                    gold -= 10;
+                    experience += 100;
+                    System.out.println("You call in some help.");
+                } else {
+					// Display lack of gold for phone message
+                    System.out.println("You don't have enough gold to use the phone.");
+                }
+            }
+            // Equip weapon if it is a sword or spear
+            if (itemType.equals("Sword") || itemType.equals("Spear")) {
+                currentWeapon = itemToUse;
+                System.out.println("You equipped the " + itemType + ".");
+            }
+             // Remove used item from the inventory
+            inventory.remove(itemToUse);
+        } else {
+            System.out.println("Item not found in inventory.");
+        }
+    }
+	}
