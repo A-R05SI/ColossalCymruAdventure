@@ -75,6 +75,10 @@ public class GameManager {
 					//Handle player attacking a monster.
 					beginBattle();
 					break;
+				case "map":
+					//Show the map to the user.
+					showMap();
+					break;
 				case "quit":
 					//Allow a user to return to main menu.
 					returnToMainMenu = true;
@@ -106,22 +110,22 @@ public class GameManager {
 	/**
 	 * Allows selection and use of items from the
 	 * inventory.
-	 * 
+	 *
 	 * side-effects
 	 * not rerentially transparent
 	 */
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
-        
+
 		// Display inventory
         System.out.println("Inventory:");
         for (Item item : inventory) {
             System.out.println(item.getitemType());
         }
-        
+
         System.out.println("Choose an item from the inventory: ");
         String chosenItem = scanner.nextLine();
-        
+
         Item itemToUse = null;
         for (Item item : inventory) {
             if (item.getitemType().equals(chosenItem)) {
@@ -129,7 +133,7 @@ public class GameManager {
                 break;
             }
         }
-        
+
         if (itemToUse != null) {
             String itemType = itemToUse.getitemType();
 
@@ -174,4 +178,25 @@ public class GameManager {
             System.out.println("Item not found in inventory.");
         }
     }
+
+	private static void showMap(){
+		for (int x = 0; x < GAME_MAP.MAX_MAP_SIZE; x++) {
+			System.out.println("---------------");
+			for (int y = 0; y < GAME_MAP.MAX_MAP_SIZE; y++) {
+				//New blank Area gets added to every cell.
+				System.out.print("|");
+
+				if (GAME_MAP.getMonsterAt(x,y) == null) {
+					System.out.print(" ");
+				} else {
+					System.out.print("X");
+				}
+
+
+				System.out.print("|");
+			}
+			System.out.println(); // Blank line
+		}
+		System.out.println("---------------");
+	}
 	}

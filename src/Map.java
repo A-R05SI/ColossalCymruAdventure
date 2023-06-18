@@ -6,7 +6,8 @@
 public class Map {
 	
 	private Area[][] grid; //2D array representing 2D grid of cells.
-	private final int MAX_MAP_SIZE = 5; //Maximum allowed horiz and vert size of map.
+	public final int MAX_MAP_SIZE = 5; //Maximum allowed horiz and vert size
+	// of map.
 	
 	
 	
