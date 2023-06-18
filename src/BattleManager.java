@@ -17,19 +17,6 @@ public class BattleManager {
         }
     }
 
-    public static void main(Actor Player, Actor Monster) {
-        boolean battle_over = false;
-        String turn = "player";
-        while(!battle_over) {
-            if (turn.equals("player")){
-                playerAttack(Player, Monster);
-            } else {
-                monsterAttack(Player, Monster);
-            }
-        }
-    }
-
-
     private static void playerAttack(Actor Player, Actor Monster){
 
     }

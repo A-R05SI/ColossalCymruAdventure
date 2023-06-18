@@ -88,11 +88,12 @@ public class GameManager {
 		
 		if (GAME_MAP.getMonsterAt(playerX, playerY) != null) {
 			//TODO call BattleManager.
-			System.out.println("WARNING - Feature Unimplemented");
+			Actor player = null;
+			Actor monster = null;
+			BattleManager battle = new BattleManager(player, monster);
 			
 		} else {
 			System.out.println("There's no monster to battle!");
-			System.out.println("WARNING - Feature Unimplemented");
 		}
 	}
 	
