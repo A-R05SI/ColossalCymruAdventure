@@ -48,20 +48,24 @@ public class GameManager {
 			//Switches based on user choice.
 			switch (actionChoice) {
 				case "n":
-					//TODO move north and update player location if valid move.
-					System.out.println("WARNING - Feature Unimplemented");
+					//Call to update coordinate of player if a valid move, otherwise
+					//display invalid move message.
+					playerY = MovementManager.movePlayer(playerY, actionChoice);
 					break;
 				case "e":
-					//TODO move east and update player location if valid move.
-					System.out.println("WARNING - Feature Unimplemented");
+					//Call to update coordinate of player if a valid move, otherwise
+					//display invalid move message.
+					playerX = MovementManager.movePlayer(playerX, actionChoice);
 					break;
 				case "s":
-					//TODO move south and update player location if valid move.
-					System.out.println("WARNING - Feature Unimplemented");
+					//Call to update coordinate of player if a valid move, otherwise
+					//display invalid move message.
+					playerY = MovementManager.movePlayer(playerY, actionChoice);
 					break;
 				case "w":
-					//TODO move west and update player location if valid move.
-					System.out.println("WARNING - Feature Unimplemented");
+					//Call to update coordinate of player if a valid move, otherwise
+					//display invalid move message.
+					playerX = MovementManager.movePlayer(playerX, actionChoice);
 					break;
 				case "use":
 					//Handle player using an item.
@@ -133,15 +137,15 @@ public class GameManager {
                 System.out.println("Can't use that here!");
 				// Use potion item
             } else if (itemType.equals("Potion")) {
-                health += 20;
+                setHealth(+20);
                 System.out.println("You take a swig of potion.");
 				// Use Bara Brith item
             } else if (itemType.equals("Bara Brith")) {
-                health += 50;
+                setHealth(+50);
                 System.out.println("The taste of childhood rejuvenates you.");
 				// Use Textbook item
             } else if (itemType.equals("Textbook")) {
-                experience += 75;
+                addExperience(75);
                 System.out.println("Your newfound knowledge of Discrete Maths emboldens you.");
 				// Use Spear item
             } else if (itemType.equals("Spear")) {
@@ -149,9 +153,9 @@ public class GameManager {
 				// Use Phone item
             } else if (itemType.equals("Phone")) {
 				// Use Phone item if enough gold.
-                if (gold > 10) {
-                    gold -= 10;
-                    experience += 100;
+                if (getGold() > 10) {
+                    addGold(10);
+                    addExperience(100);
                     System.out.println("You call in some help.");
                 } else {
 					// Display lack of gold for phone message
@@ -160,7 +164,7 @@ public class GameManager {
             }
             // Equip weapon if it is a sword or spear
             if (itemType.equals("Sword") || itemType.equals("Spear")) {
-                currentWeapon = itemToUse;
+                getCurrentWeapon() = itemToUse;
                 System.out.println("You equipped the " + itemType + ".");
             }
              // Remove used item from the inventory
