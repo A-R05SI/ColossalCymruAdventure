@@ -167,7 +167,7 @@ public class GameManager {
             }
             // Equip weapon if it is a sword or spear
             if (itemType.equals("Sword") || itemType.equals("Spear")) {
-                player.setCurrentWeapon() = itemToUse;
+                player.setCurrentWeapon(itemToUse);
                 System.out.println("You equipped the " + itemType + ".");
             }
              // Remove used item from the inventory
