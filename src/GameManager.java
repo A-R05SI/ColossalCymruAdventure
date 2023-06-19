@@ -13,6 +13,7 @@ import java.util.Scanner;
  *
  */
 public class GameManager {
+	Player player = new Player("Player"); // Create an instance of Player;
 	
 	public final static Map GAME_MAP = new Map(); //Create new map for entire game.
 	private static int playerX = 0; //Tracks x coord of player. player starts in top left
@@ -112,7 +113,7 @@ public class GameManager {
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
 
-        Player player = new Player("Player"); // Create an instance of Player
+
     	List<Item> inventory = player.getInventory(); // Access the inventory through the Player instance
 
 		// Display inventory
