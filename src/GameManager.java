@@ -111,7 +111,10 @@ public class GameManager {
 	 */
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
-        
+
+        Player player = new Player("Player"); // Create an instance of Player
+    	List<Item> inventory = player.getInventory(); // Access the inventory through the Player instance
+
 		// Display inventory
         System.out.println("Inventory:");
         for (Item item : inventory) {
@@ -137,15 +140,15 @@ public class GameManager {
                 System.out.println("Can't use that here!");
 				// Use potion item
             } else if (itemType.equals("Potion")) {
-                setHealth(+20);
+                player.setHealth(+20);
                 System.out.println("You take a swig of potion.");
 				// Use Bara Brith item
             } else if (itemType.equals("Bara Brith")) {
-                setHealth(+50);
+                player.setHealth(+50);
                 System.out.println("The taste of childhood rejuvenates you.");
 				// Use Textbook item
             } else if (itemType.equals("Textbook")) {
-                addExperience(75);
+                player.addExperience(75);
                 System.out.println("Your newfound knowledge of Discrete Maths emboldens you.");
 				// Use Spear item
             } else if (itemType.equals("Spear")) {
@@ -153,9 +156,9 @@ public class GameManager {
 				// Use Phone item
             } else if (itemType.equals("Phone")) {
 				// Use Phone item if enough gold.
-                if (getGold() > 10) {
-                    addGold(10);
-                    addExperience(100);
+                if (player.getGold() > 10) {
+                    player.addGold(10);
+                    player.addExperience(100);
                     System.out.println("You call in some help.");
                 } else {
 					// Display lack of gold for phone message
@@ -164,7 +167,7 @@ public class GameManager {
             }
             // Equip weapon if it is a sword or spear
             if (itemType.equals("Sword") || itemType.equals("Spear")) {
-                getCurrentWeapon() = itemToUse;
+                player.setCurrentWeapon() = itemToUse;
                 System.out.println("You equipped the " + itemType + ".");
             }
              // Remove used item from the inventory
