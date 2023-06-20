@@ -13,6 +13,7 @@ public class Player extends Actor {
     final int MIN_GOLD = 0;
     final int MAX_GOLD = 9999999;
     final int MIN_EXPERIENCE = 0;
+    final int STARTER_SWORD_DAMAGE = 5;
 
     int experience = MIN_EXPERIENCE;
     int gold = MIN_GOLD;
@@ -25,6 +26,8 @@ public class Player extends Actor {
      */
     public Player(String name) {
         super(name);
+        Item starter_sword = new Item("Sword", 0, STARTER_SWORD_DAMAGE);
+        setCurrentWeapon(starter_sword);
     }
 
     // Getters and Setters

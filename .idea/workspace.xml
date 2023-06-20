@@ -19,11 +19,8 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
         <entry key="$PROJECT_DIR$" value="OBJ-4_Version_0.1" />
-
         <entry key="$PROJECT_DIR$" value="S&amp;P" />
-
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,25 +29,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2RADiAI7dKXRUMFAZjnNkkbc2UT" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
-
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
-
   }
 }]]></component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a40cd695-0f6e-4c31-889d-c64e363e84e7" name="Changes" comment="" />
@@ -58,21 +41,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686684116992</updated>
-    </task>
-
-    <task id="LOCAL-00001" summary="Allow for null &amp; non-null areas">
-      <created>1687101539625</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1687101539625</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Lets the user know what monster is in front of them">
-      <created>1687102373881</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1687102373881</updated>
     </task>
     <task id="LOCAL-00001" summary="Removed testing Main Method &amp;&amp; added call for BattleManager">
       <created>1687105341792</created>
@@ -87,9 +55,15 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1687108264687</updated>
-
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Amended files to allow for merge">
+      <created>1687294753033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687294753033</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,52 +71,14 @@
       <map>
         <entry key="MAIN">
           <value>
-
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/OBJ-1_Version_0.1" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/OBJ-1_Version_0.1" />
-                </option>
-              </RecentGroup>
-            </list>
-
             <State />
-
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-
-    <MESSAGE value="Allow for null &amp; non-null areas" />
-    <MESSAGE value="Lets the user know what monster is in front of them" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lets the user know what monster is in front of them" />
-
-    <MESSAGE value="Removed testing Main Method &amp;&amp; added call for BattleManager" />
-    <MESSAGE value="Added temporary work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added temporary work" />
-
+    <MESSAGE value="Amended files to allow for merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amended files to allow for merge" />
   </component>
 </project>

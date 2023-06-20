@@ -34,8 +34,8 @@ public class BattleManager {
             System.out.println("Game Over.");
             System.exit(0);
         } else {
-            System.out.printf("%s has been killed.", monster.getName());
-            System.out.printf("%s has won the battle.", player.getName());
+            System.out.printf("%s has been killed.\n", monster.getName());
+            System.out.printf("%s has won the battle.\n", player.getName());
 
             player.addExperience(PLAYER_XP_IF_WIN);
             player.addGold(PLAYER_GOLD_IF_WIN);
@@ -47,13 +47,13 @@ public class BattleManager {
         int attack = player.getCurrentWeapon().getDamage();
         int ac = monster.getArmour();
         if(attack == 0){
-            System.out.printf("%s missed.", player.getName());
+            System.out.printf("%s missed.\n", player.getName());
         } else if (attack <= ac){
-            System.out.printf("%s struck a glancing blow!", player.getName());
+            System.out.printf("%s struck a glancing blow!\n", player.getName());
         } else {
             int damageDealt = attack - ac;
             monster.setHealth(monster.getHealth() - damageDealt);
-            System.out.printf("%s landed a hit for %s damage!", player.getName(), damageDealt);
+            System.out.printf("%s landed a hit for %s damage!\n", player.getName(), damageDealt);
         }
     }
 
@@ -63,13 +63,13 @@ public class BattleManager {
         int attack = random.nextInt(MAXIMUM_ATTACK + 1); //allows for attacks == MAXIMUM_ATTACK
         int ac = player.getArmour();
         if(attack == 0){
-            System.out.printf("%s missed.", monster.getName());
+            System.out.printf("%s missed.\n", monster.getName());
         } else if (attack <= ac){
-            System.out.printf("%s struck a glancing blow!", monster.getName());
+            System.out.printf("%s struck a glancing blow!\n", monster.getName());
         } else {
             int damageDealt = attack - ac;
             player.setHealth(player.getHealth() - damageDealt);
-            System.out.printf("%s landed a hit for %s damage!", monster.getName(), damageDealt);
+            System.out.printf("%s landed a hit for %s damage!\n", monster.getName(), damageDealt);
         }
     }
 
