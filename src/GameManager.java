@@ -4,7 +4,6 @@
 
 import java.util.Scanner;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * This class describes a GameManager, the class responsible for dictating the flow of gameplay.
@@ -13,8 +12,8 @@ import java.util.Scanner;
  *
  */
 public class GameManager {
-	Player player = new Player("Player"); // Create an instance of Player;
-	
+	static Player player = new Player("Player"); // Create an instance of Player;
+
 	public final static Map GAME_MAP = new Map(); //Create new map for entire game.
 	private static int playerX = 0; //Tracks x coord of player. player starts in top left
 	private static int playerY = 0; //tracks y coord of player. player starts in top left
@@ -99,11 +98,10 @@ public class GameManager {
 		
 		if (GAME_MAP.getMonsterAt(playerX, playerY) != null) {
 			//TODO call BattleManager.
-			System.out.println("WARNING - Feature Unimplemented");
+			BattleManager battle = new BattleManager(player, (Monster) GAME_MAP.getMonsterAt(playerX, playerY));
 			
 		} else {
 			System.out.println("There's no monster to battle!");
-			System.out.println("WARNING - Feature Unimplemented");
 		}
 	}
 	
@@ -179,7 +177,8 @@ public class GameManager {
             System.out.println("Item not found in inventory.");
         }
     }
-    private static void showMap(){
+
+	private static void showMap(){
 		for (int x = 0; x < GAME_MAP.MAX_MAP_SIZE; x++) {
 			System.out.println("---------------");
 			for (int y = 0; y < GAME_MAP.MAX_MAP_SIZE; y++) {
@@ -199,4 +198,4 @@ public class GameManager {
 		}
 		System.out.println("---------------");
 	}
-	}
+}
