@@ -2,12 +2,16 @@
  * This class describes a collectible item rewarded after every battle.
  * 
  * @author Liam O'Connor
- * @version 0.2
+ * @version 1
  */
+
+import java.util.Random;
 
 public class Item {
     private String itemType;
     private int goldCost;
+
+    private static final String[] ITEM_TYPES = {"Sword", "Potion", "Bara Brith", "Textbook", "Spear", "Phone"};
 
     /**
      * 
@@ -17,10 +21,15 @@ public class Item {
      * @param goldCost The gold cost of the item.
      */
     public Item(String itemType, int goldCost) {
-        this.itemType = itemType;
-        this.goldCost = goldCost;
+        Random random = new Random();
+        int index = random.nextInt(ITEM_TYPES.length);
+        this.itemType = ITEM_TYPES[index];
+        if (this.itemType.equals("Phone")) {
+            this.goldCost = 10;
+        } else {
+            this.goldCost = 0;
+        }
     }
-
     /**
      * Returns the type of the item.
      * 
