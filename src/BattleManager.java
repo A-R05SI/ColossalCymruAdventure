@@ -5,27 +5,42 @@ import java.util.Random;
  *
  */
 public class BattleManager {
+
+    Random random = new Random();
+
     public BattleManager(Actor Player, Actor Monster){
-        boolean battle_over = false;
-        String turn = "player";
-        while(!battle_over) {
-            if (turn.equals("player")){
-                playerAttack(Player, Monster);
+        this.player = player;
+        this.monster = monster;
+        this.isPlayerTurn = true;
+    }
+
+    private void startBattle(){
+
+        while(!is_battle_over()) {
+            if (isPlayerTurn){
+                playerAttack();
             } else {
-                monsterAttack(Player, Monster);
+                monsterAttack();
             }
         }
     }
 
-    private static void playerAttack(Actor Player, Actor Monster){
+    private static void playerAttack(){
 
     }
 
-    private static void monsterAttack(Actor Player, Actor Monster){
-        final int MINIMUM_ATTACK = 0;
+    private static void monsterAttack(){
         final int MAXIMUM_ATTACK = 20;
-        Random random = new Random();
+
         
-        System.out.println(random.nextInt(MAXIMUM_ATTACK));
+
+    }
+
+    private static boolean is_battle_over(){
+        if((player.getHealth() > 0) && (monster.getHealth > 0)){
+            return false
+        } else {
+            return true
+        }
     }
 }
