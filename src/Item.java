@@ -19,17 +19,17 @@ public class Item {
    /**
      * Constructs an Item object with a random item type and gold cost.
      */
-    public Item() {
+       public Item() {
         Random random = new Random();
         int weaponIndex = random.nextInt(WEAPONS.length);
         int usefulItemIndex = random.nextInt(USEFUL_ITEMS.length);
 
         if (weaponIndex == 0) { // Sword
             this.itemType = WEAPONS[weaponIndex];
-            this.damage = 10; // Assign a default damage value for Sword
+            this.damage = random.nextInt(11) + 10; // Random damage between 10 and 20 for Sword
         } else if (weaponIndex == 1) { // Spear
             this.itemType = WEAPONS[weaponIndex];
-            this.damage = 8; // Assign a default damage value for Spear
+            this.damage = random.nextInt(11) + 10; // Random damage between 10 and 20 for Spear
         } else {
             this.itemType = USEFUL_ITEMS[usefulItemIndex];
             this.damage = 0; // Set damage to 0 for useful items
