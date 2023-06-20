@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="a40cd695-0f6e-4c31-889d-c64e363e84e7" name="Changes" comment="Lets the user know what monster is in front of them">
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
     </list>
+
+    <list default="true" id="a40cd695-0f6e-4c31-889d-c64e363e84e7" name="Changes" comment="Added temporary work" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +19,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+
         <entry key="$PROJECT_DIR$" value="OBJ-4_Version_0.1" />
+
+        <entry key="$PROJECT_DIR$" value="S&amp;P" />
+
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,10 +38,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
+
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -45,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686684116992</updated>
     </task>
+
     <task id="LOCAL-00001" summary="Allow for null &amp; non-null areas">
       <created>1687101539625</created>
       <option name="number" value="00001" />
@@ -58,6 +73,21 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1687102373881</updated>
+
+    <task id="LOCAL-00001" summary="Removed testing Main Method &amp;&amp; added call for BattleManager">
+      <created>1687105341792</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687105341792</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added temporary work">
+      <created>1687108264687</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687108264687</updated>
+
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -67,6 +97,7 @@
       <map>
         <entry key="MAIN">
           <value>
+
             <State>
               <option name="FILTERS">
                 <map>
@@ -95,14 +126,23 @@
                 </option>
               </RecentGroup>
             </list>
+
+            <State />
+
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+
     <MESSAGE value="Allow for null &amp; non-null areas" />
     <MESSAGE value="Lets the user know what monster is in front of them" />
     <option name="LAST_COMMIT_MESSAGE" value="Lets the user know what monster is in front of them" />
+
+    <MESSAGE value="Removed testing Main Method &amp;&amp; added call for BattleManager" />
+    <MESSAGE value="Added temporary work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added temporary work" />
+
   </component>
 </project>
