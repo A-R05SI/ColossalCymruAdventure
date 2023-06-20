@@ -38,8 +38,8 @@ public class GameManager {
 			Actor monsterAtLocation = GAME_MAP.getMonsterAt(playerX, playerY);
 			//If there is a monster present, inform the player as to what the monster is called.
 			if (monsterAtLocation != null) {
-				System.out.println("There is a monster here."
-						+ " I'd output its name if my code were finished.");
+				System.out.println("There is a "
+						+ monsterAtLocation.getName() + " here.");
 			}
 			
 			System.out.println("What now?\n"); //Prompt for user input.
@@ -75,6 +75,10 @@ public class GameManager {
 				case "attack":
 					//Handle player attacking a monster.
 					beginBattle();
+					break;
+				case "map":
+					//Show the map to the user.
+					showMap();
 					break;
 				case "quit":
 					//Allow a user to return to main menu.
@@ -112,8 +116,6 @@ public class GameManager {
 	 */
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
-
-
     	List<Item> inventory = player.getInventory(); // Access the inventory through the Player instance
 
 		// Display inventory
@@ -177,4 +179,24 @@ public class GameManager {
             System.out.println("Item not found in inventory.");
         }
     }
+    private static void showMap(){
+		for (int x = 0; x < GAME_MAP.MAX_MAP_SIZE; x++) {
+			System.out.println("---------------");
+			for (int y = 0; y < GAME_MAP.MAX_MAP_SIZE; y++) {
+				//New blank Area gets added to every cell.
+				System.out.print("|");
+
+				if (GAME_MAP.getMonsterAt(x,y) == null) {
+					System.out.print(" ");
+				} else {
+					System.out.print("X");
+				}
+
+
+				System.out.print("|");
+			}
+			System.out.println(); // Blank line
+		}
+		System.out.println("---------------");
+	}
 	}
