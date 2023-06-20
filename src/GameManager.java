@@ -4,7 +4,6 @@
 
 import java.util.Scanner;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * This class describes a GameManager, the class responsible for dictating the flow of gameplay.
@@ -13,7 +12,7 @@ import java.util.Scanner;
  *
  */
 public class GameManager {
-	Player player = new Player("Player"); // Create an instance of Player;
+	static Player player = new Player("Player"); // Create an instance of Player;
 
 	public final static Map GAME_MAP = new Map(); //Create new map for entire game.
 	private static int playerX = 0; //Tracks x coord of player. player starts in top left
