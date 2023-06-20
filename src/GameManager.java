@@ -37,8 +37,8 @@ public class GameManager {
 			Actor monsterAtLocation = GAME_MAP.getMonsterAt(playerX, playerY);
 			//If there is a monster present, inform the player as to what the monster is called.
 			if (monsterAtLocation != null) {
-				System.out.println("There is a monster here."
-						+ " I'd output its name if my code were finished.");
+				System.out.println("There is a "
+						+ monsterAtLocation.getName() + " here.");
 			}
 			
 			System.out.println("What now?\n"); //Prompt for user input.
@@ -114,8 +114,6 @@ public class GameManager {
 	 */
 	private static void beginUse() {
 		Scanner scanner = new Scanner(System.in);
-
-
     	List<Item> inventory = player.getInventory(); // Access the inventory through the Player instance
 
 		// Display inventory
@@ -200,4 +198,4 @@ public class GameManager {
 		}
 		System.out.println("---------------");
 	}
-	}
+}
